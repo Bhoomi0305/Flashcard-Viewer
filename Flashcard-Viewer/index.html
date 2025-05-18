@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flashcard Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Flashcard Viewer</h1>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card-inner">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="button-group">
+    <button id="prevBtn">⬅️ Prev</button>
+    <button id="flipBtn">🔄 Flip</button>
+    <button id="nextBtn">➡️ Next</button>
+  </div>
+
+  <div class="button-group">
+    <button id="knowBtn">✅ Know</button>
+    <button id="dontKnowBtn">❌ Don’t Know</button>
+  </div>
+
+  <div id="status">
+    Card <span id="cardNumber">1</span> of <span id="totalCards">5</span> |
+    ✅ <span id="knownCount">0</span> known |
+    ❌ <span id="unknownCount">0</span> unknown
+  </div>
+
+  <button id="toggleTheme">🌙 Toggle Dark Mode</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

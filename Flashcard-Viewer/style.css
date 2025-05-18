@@ -1,0 +1,150 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  margin: 20px auto;
+  perspective: 1000px;
+  position: relative;
+  border-radius: 10px;
+  overflow: visible;
+  z-index: 1;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background: linear-gradient(135deg, #e1dcc4, #f0f0f0);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 15px;
+}
+
+.back {
+  left: -30px;
+  transform: rotateY(180deg);
+}
+
+.button-group {
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.progress-container {
+  width: 80%;
+  background: #ddd;
+  border-radius: 10px;
+  height: 10px;
+  margin: 15px auto;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4CAF50;
+  transition: width 0.4s ease;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark .front,
+body.dark .back {
+  background: linear-gradient(135deg, #484848, #1a1a1a);
+  color: white;
+}
+
+body.dark .progress-bar {
+  background: #ff9800;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before {
+  content: '';
+  position: absolute;
+  height: 238px;
+  width: 344px;
+  inset: -8px;
+  background-image: conic-gradient(from var(--angle), transparent 30%, rgb(107, 186, 250), rgb(252, 152, 199), rgb(77, 250, 77), rgb(255, 247, 86));
+  top: 115px;
+  left: 165px;
+  right: -10px;
+  translate: -50% -50%;
+  z-index: -1;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+.card:hover::before,
+.card:hover::after {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
