@@ -58,7 +58,7 @@ button {
   padding: 10px 15px;
   margin: 5px;
   font-weight: bold;
-  background-color: #4CAF50;
+  background-color: #4c63af;
   color: white;
   border: none;
   border-radius: 8px;
@@ -66,7 +66,7 @@ button {
 }
 
 button:hover {
-  background-color: #388e3c;
+  background-color: #5a388e;
   transform: scale(1.05);
   cursor: pointer;
 }
@@ -100,7 +100,7 @@ body.dark {
 
 body.dark .front,
 body.dark .back {
-  background: linear-gradient(135deg, #484848, #1a1a1a);
+  background: linear-gradient(135deg, #5a5a5a, #282828);
   color: white;
 }
 
@@ -117,8 +117,8 @@ body.dark .progress-bar {
 .card::after, .card::before {
   content: '';
   position: absolute;
-  height: 238px;
-  width: 344px;
+  height: 235px;
+  width: 335px;
   inset: -8px;
   background-image: conic-gradient(from var(--angle), transparent 30%, rgb(107, 186, 250), rgb(252, 152, 199), rgb(77, 250, 77), rgb(255, 247, 86));
   top: 115px;
